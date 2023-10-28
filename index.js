@@ -1,5 +1,9 @@
 // stack
 
+// A stack is a linear data structure that follows the Last-In-First-Out (LIFO) principle. 
+// This means that the last element added to the stack is the first one to be removed. 
+// Stacks are used in various algorithms and data processing tasks.
+
 class Stack {
     constructor() {
       this.items = [];
@@ -29,6 +33,10 @@ class Stack {
   }
 
   // queue
+
+  // A queue is another linear data structure that follows the First-In-First-Out (FIFO) principle. 
+  // This means that the first element added to the queue is the first one to be removed. 
+  // Queues are commonly used in tasks that require managing and processing items in a specific order.
 
   class Queue {
     constructor() {
