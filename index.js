@@ -65,4 +65,33 @@ class Stack {
       return this.items.length;
     }
   }
+
+  // Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid. 
+  // An input string is valid if the brackets are closed in the correct order.
+
+  function isValid(s) {
+    const stack = [];
+    const bracketPairs = {
+        '(': ')',
+        '{': '}',
+        '[': ']'
+    };
+    
+    for (let char of s) {
+        if (char in bracketPairs) {
+            stack.push(char); // Push opening brackets onto the stack
+        } else {
+            if (stack.length === 0 || bracketPairs[stack.pop()] !== char) {
+                return false; // Mismatched brackets or extra closing bracket
+            }
+        }
+    }
+    
+    return stack.length === 0; // If stack is empty, all brackets were correctly matched
+}
+
+// Test cases
+console.log(isValid("{[]}")); // true
+console.log(isValid("([)]")); // false
+
   
