@@ -94,4 +94,22 @@ class Stack {
 console.log(isValid("{[]}")); // true
 console.log(isValid("([)]")); // false
 
+// Write a JavaScript function that takes a string as input and uses a stack to reverse the string. 
+// The function should return the reversed string.
+
+function reverseString(input) {
+  const stack = [];
+  let reversedString = '';
+
+  for (const char of input) {
+    stack.push(char);
+  }
+
+  while (stack.length > 0) {
+    reversedString += stack.pop();
+  }
+
+  return reversedString;
+}
+
   
