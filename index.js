@@ -112,4 +112,29 @@ function reverseString(input) {
   return reversedString;
 }
 
+function isBalancedParentheses(input) {
+  const stack = [];
+  const openingBrackets = '({[';
+  const closingBrackets = ')}]';
+
+  for (let char of input) {
+    if (openingBrackets.includes(char)) {
+      stack.push(char);
+    } else if (closingBrackets.includes(char)) {
+      const lastOpenBracket = stack.pop();
+      if (!lastOpenBracket || openingBrackets.indexOf(lastOpenBracket) !== closingBrackets.indexOf(char)) {
+        return false; // Unmatched closing bracket
+      }
+    }
+  }
+
+  // If the stack is empty, the parentheses are balanced
+  return stack.length === 0;
+}
+
+// Examples
+console.log(isBalancedParentheses('()')); // true
+console.log(isBalancedParentheses('(()())')); // true
+console.log(isBalancedParentheses('())(')); // false
+
   
