@@ -137,4 +137,41 @@ console.log(isBalancedParentheses('()')); // true
 console.log(isBalancedParentheses('(()())')); // true
 console.log(isBalancedParentheses('())(')); // false
 
-  
+class Queue {
+  constructor() {
+    this.items = [];
+  }
+
+  // Add an element to the end of the queue (enqueue).
+  enqueue(element) {
+    this.items.push(element);
+  }
+
+  // Remove and return the front element of the queue (dequeue).
+  dequeue() {
+    if (this.isEmpty()) {
+      return "Queue is empty";
+    }
+    return this.items.shift();
+  }
+
+  // Check if the queue is empty.
+  isEmpty() {
+    return this.items.length === 0;
+  }
+}
+
+// Usage example:
+const myQueue = new Queue();
+
+myQueue.enqueue(1);
+myQueue.enqueue(2);
+myQueue.enqueue(3);
+
+console.log(myQueue.dequeue()); // Output: 1
+console.log(myQueue.dequeue()); // Output: 2
+
+console.log(myQueue.isEmpty()); // Output: false
+
+console.log(myQueue.dequeue()); // Output: 3
+console.log(myQueue.isEmpty()); // Output: true
